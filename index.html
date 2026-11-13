@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stella Doukianou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=Work+Sans:wght@300;400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0b;
+  --paper:#ffffff;
+  --mid:#6b6b6b;
+  --hair:#d9d9d9;
+  --soft:#f2f2f2;
+  --display:"Syne", "Helvetica Neue", Arial, sans-serif;
+  --body:"Work Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6}
+a{color:inherit}
+a:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+
+/* Header */
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;height:60px}
+.mark{font-family:var(--display);font-size:22px;text-decoration:none;letter-spacing:.01em}
+nav{display:flex;gap:clamp(14px,2.4vw,30px);overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap}
+/* Publications, supervision, teaching */
+.pubs{list-style:none;border-top:1px solid var(--hair)}
+.pubs li{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:22px 0;border-bottom:1px solid var(--hair)}
+.pubs .yr{font-family:var(--mono);font-size:13px;color:var(--mid);font-variant-numeric:tabular-nums}
+.pubs .t{font-family:var(--display);font-size:clamp(19px,1.8vw,24px);line-height:1.25;letter-spacing:-.02em}
+.pubs .a{margin-top:6px;font-size:15px;color:#3a3a3a}
+.pubs .v{margin-top:2px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--mid)}
+.pubs .me{font-weight:400;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.card{border-top:1px solid var(--ink);padding-top:18px}
+.card .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+.card h3{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.2vw,28px);line-height:1.15;letter-spacing:-.02em;margin-top:10px}
+.card p{margin-top:10px;font-size:16px}
+.lead{font-family:var(--display);font-size:clamp(24px,2.6vw,34px);line-height:1.3;letter-spacing:-.02em;max-width:34ch;margin-bottom:clamp(32px,5vw,56px)}
+.note{margin-top:28px;font-family:var(--mono);font-size:12px;color:var(--mid);letter-spacing:.04em}
+.note a{text-underline-offset:3px}
+@media (max-width:820px){.pubs li{grid-template-columns:1fr;gap:4px}.cols{grid-template-columns:1fr}}
+nav a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-weight:400}
+nav a:hover{text-decoration:underline;text-underline-offset:6px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:end;padding:clamp(48px,8vw,110px) 0 clamp(40px,6vw,80px)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,9vw,128px);line-height:.92;letter-spacing:-.04em;text-wrap:balance}
+.hero h1 em{display:block;font-style:normal;font-weight:700}
+.tag,.sec-head .n,.pos .yr,.sub h3,.proj .meta,.proj figcaption,nav a,footer{font-family:var(--mono)}
+.sec-head h2,.pos .title,.proj h3,.about p:first-child,.contact .big{letter-spacing:-.03em}
+.hero .role{margin-top:32px;max-width:34ch;font-size:18px}
+.hero .fields{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.tag{border:1px solid var(--ink);padding:6px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.hero canvas{width:100%;aspect-ratio:4/5;display:block;background:var(--ink)}
+
+/* Sections */
+section{border-top:1px solid var(--ink);padding:clamp(48px,7vw,96px) 0}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:clamp(32px,5vw,56px);align-items:baseline}
+.sec-head .n{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid)}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,84px);line-height:1;letter-spacing:-.01em}
+
+/* About */
+.about{display:grid;grid-template-columns:200px 1fr;gap:32px}
+.about p{font-family:var(--display);font-size:clamp(24px,2.6vw,34px);line-height:1.3;max-width:30ch}
+.about p + p{margin-top:24px;font-family:var(--body);font-size:17px;line-height:1.7;max-width:62ch;color:#2a2a2a}
+
+/* Positions */
+.pos{list-style:none;border-top:1px solid var(--hair)}
+.pos li{display:grid;grid-template-columns:200px 1fr 1fr;gap:32px;padding:26px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.pos .yr{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-variant-numeric:tabular-nums}
+.pos .title{font-family:var(--display);font-size:clamp(24px,2.4vw,32px);line-height:1.15}
+.pos .where{font-size:16px}
+.pos li.now .title{font-weight:700}
+.sub{margin-top:56px;display:grid;grid-template-columns:200px 1fr;gap:32px}
+.sub h3{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;color:var(--mid)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+
+/* Projects */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,56px) clamp(20px,3vw,40px)}
+.proj figure{position:relative;background:var(--ink);overflow:hidden}
+.proj canvas{width:100%;aspect-ratio:3/2;display:block;filter:grayscale(1)}
+.proj figcaption{position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#fff;opacity:.75}
+.proj .meta{display:flex;justify-content:space-between;gap:16px;margin-top:18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid)}
+.proj h3{font-family:var(--display);font-weight:400;font-size:clamp(30px,3.2vw,44px);line-height:1.05;margin-top:8px}
+.proj p{margin-top:10px;max-width:46ch;font-size:16px}
+.proj.wide{grid-column:1 / -1}
+.proj.wide canvas{aspect-ratio:21/9}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:200px 1fr;gap:32px}
+.contact .big{font-family:var(--display);font-size:clamp(36px,5vw,68px);line-height:1.05;font-weight:500}
+.contact .small{margin-top:20px;font-size:16px;max-width:52ch}
+footer{border-top:1px solid var(--ink);padding:24px 0 40px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .hero canvas{aspect-ratio:16/10}
+  .sec-head,.about,.sub,.contact{grid-template-columns:1fr;gap:12px}
+  .pos li{grid-template-columns:1fr;gap:4px}
+  .grid{grid-template-columns:1fr}
+  .proj.wide canvas{aspect-ratio:3/2}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top">S Doukianou</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#positions">Positions</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#supervision">Supervision</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Stella <em>Doukianou</em></h1>
+        <p class="role">Building immersive worlds and playful technologies together with the communities they are made for</p>
+        <div class="fields">
+          <span class="tag">Immersive Tech</span>
+          <span class="tag">Participatory Design</span>
+          <span class="tag">Creative Computing</span>
+        </div>
+      </div>
+      <canvas id="heroArt" aria-label="Generative black and white line drawing"></canvas>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <div class="sec-head" style="display:block;margin:0"><span class="n">About</span></div>
+        <div>
+          <p>Immersive technology, creative practice and social engagement</p>
+          <p>Dr Stella Doukianou studies how extended reality can help people think, feel and act differently about the world around them. Over the past decade she has developed interactive systems and games that link creativity with advanced computing to deepen participation and inclusion, specialising in XR, HCI and game design. Her approach is grounded in co‑creation and the belief that technology should enable rather than exclude</p>
+          <p>A Greek researcher and educator with a background in civil engineering and digital media, she received her PhD in Computer Science from the Serious Games Institute, Coventry University, and her MSc in Design and Digital Media from the University of Edinburgh. She has taught for around fifteen years, with a focus on hackathons, design sprints and ethical approaches to creative computing education</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="positions">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">Positions</span><h2>Positions</h2></div>
+      <ul class="pos">
+        <li class="now">
+          <span class="yr">Current</span>
+          <span class="title">Course Leader, BSc Creative Computing</span>
+          <span class="where">Creative Computing Institute, University of the Arts London</span>
+        </li>
+        <li>
+          <span class="yr">Current</span>
+          <span class="title">PhD Supervisor</span>
+          <span class="where">Creative Computing Institute, University of the Arts London, with three doctoral completions</span>
+        </li>
+        <li>
+          <span class="yr">2019 – 2024</span>
+          <span class="title">Senior Lecturer in Creative Computing</span>
+          <span class="where">Creative Computing Institute, University of the Arts London. Led Experimental HCI, Digital Production, Visualisation and Sensing, and History of Computing; Placement Coordinator</span>
+        </li>
+        <li>
+          <span class="yr">2023 – 2026</span>
+          <span class="title">External Examiner</span>
+          <span class="where">Brunel University London and University of Kent, BSc and BA in Digital Design, Visual Effects and Multimedia Technology</span>
+        </li>
+        <li>
+          <span class="yr">2022 – 2023</span>
+          <span class="title">External Programme Reviewer</span>
+          <span class="where">MSc Digital Design, Brunel University London</span>
+        </li>
+        <li>
+          <span class="yr">2019 – 2024</span>
+          <span class="title">External Reviewer, Internal Quality Review</span>
+          <span class="where">Culture, Communication and Media, IOE, University College London</span>
+        </li>
+        <li>
+          <span class="yr">2017 – 2021</span>
+          <span class="title">Lecturer in Disruptive Technologies</span>
+          <span class="where">University of Greenwich. Directed BCS accreditation for Games and Digital Media and led validation of the MSc Computer Science with Games Development</span>
+        </li>
+        <li>
+          <span class="yr">2015 – 2017</span>
+          <span class="title">Research Consultant</span>
+          <span class="where">EXUS Ltd, London. Coordinated the Horizon 2020 project EMOTIVE</span>
+        </li>
+        <li>
+          <span class="yr">2015 – 2016</span>
+          <span class="title">Research Associate</span>
+          <span class="where">Serious Games Institute, Coventry University. Led work on the H2020 project OrbEEt</span>
+        </li>
+        <li>
+          <span class="yr">2013 – 2015</span>
+          <span class="title">Researcher</span>
+          <span class="where">Hildebrand Technology Ltd, London. FP7 smart‑city project COSMOS</span>
+        </li>
+        <li>
+          <span class="yr">2012 – 2013</span>
+          <span class="title">Research Assistant</span>
+          <span class="where">German Centre for Neurodegenerative Diseases (DZNE), with Prof Thomas Wolbers. 3D immersive environments for cognitive research</span>
+        </li>
+      </ul>
+
+      <div class="sub">
+        <h3>Education</h3>
+        <ul class="pos" style="border-top:0">
+          <li><span class="yr">2013 – 2018</span><span class="title">PhD in Computer Science</span><span class="where">Serious Games Institute, Coventry University. Full‑time doctoral studentship</span></li>
+          <li><span class="yr">2011 – 2012</span><span class="title">MSc Design and Digital Media</span><span class="where">University of Edinburgh</span></li>
+          <li><span class="yr">2004 – 2010</span><span class="title">BSc (Hons) Civil Engineering</span><span class="where">Technological Educational Institute of Central Macedonia, Greece</span></li>
+          <li><span class="yr">2017 – 2018</span><span class="title">PGCert in Higher Education</span><span class="where">University of Greenwich</span></li>
+        </ul>
+      </div>
+      <div class="sub">
+        <h3>Fellowships and memberships</h3>
+        <div class="chips">
+          <span class="tag">Senior Fellow, HEA, 2025</span>
+          <span class="tag">MBCS</span>
+          <span class="tag">SEDA, Supervising Research Degrees, 2024</span>
+          <span class="tag">Computer Arts Society</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">Projects</span><h2>Projects</h2></div>
+      <div class="grid">
+        <article class="proj wide">
+          <figure><canvas data-seed="13" data-style="flow" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
+          <div class="meta"><span>Live brief</span><span>With Reos Partners</span></div>
+          <h3>HeatLab</h3>
+          <p>A live brief with Reos Partners for the Installation and Collaboration unit, ending in an exhibition of student work</p>
+        </article>
+        <article class="proj">
+          <figure><canvas data-seed="7" data-style="flow" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
+          <div class="meta"><span>Participatory Design</span><span>With This Place Between Us</span></div>
+          <h3>Co‑designing a game with refugees</h3>
+          <p>A digital game made through a co‑design process with refugees, to raise public awareness and challenge stigma around refugee journeys, funded through an Innovation Voucher</p>
+        </article>
+        <article class="proj">
+          <figure><canvas data-seed="64" data-style="waves" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
+          <div class="meta"><span>Exhibition, May 2025</span><span>With This Place Between Us</span></div>
+          <h3>Paths of Resilience</h3>
+          <p>A knowledge exchange project and public exhibition curated with This Place Between Us, growing out of three co‑design workshops with refugee participants and a concept for a serious game aimed at destigmatisation</p>
+        </article>
+        <article class="proj">
+          <figure><canvas data-seed="21" data-style="rings" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
+          <div class="meta"><span>H2020, 2016 – 2019</span><span>Coordinator</span></div>
+          <h3>EMOTIVE</h3>
+          <p>Emotionally resonant, interactive XR storytelling for cultural heritage and museums, a €2.6m Horizon 2020 project coordinated on behalf of EXUS</p>
+        </article>
+        <article class="proj">
+          <figure><canvas data-seed="42" data-style="grid" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
+          <div class="meta"><span>H2020, 2015 – 2018</span><span>Work Package Leader</span></div>
+          <h3>OrbEEt</h3>
+          <p>A serious game encouraging energy‑efficient behaviour in organisations through personalised digital feedback, led on behalf of the Serious Games Institute</p>
+        </article>
+        <article class="proj wide">
+          <figure><canvas data-seed="88" data-style="waves" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
+          <div class="meta"><span>FP7, 2013 – 2016</span><span>Work Package Leader</span></div>
+          <h3>COSMOS</h3>
+          <p>IoT for smart cities, leading the London "Smart Heat and Electricity" scenario and its behavioural change framework on behalf of Hildebrand</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">Publications</span><h2>Selected publications</h2></div>
+      <ul class="pubs">
+        <li><span class="yr">2026</span><div><div class="t">Cudly: Real‑Time Synchronised Robotic‑VR Coupling for Comforting Multisensory Experiences in Older Adults</div><div class="a">Ziwei Zhao, <span class="me">Stella Doukianou</span>, Mengci Liu, Eluned Medi Owen, Zhining Jiang, Muhan Xu, Franco Ortega‑Ghio, Vali Lalioti</div><div class="v">CHI 2026 Extended Abstracts</div></div></li>
+        <li><span class="yr">2025</span><div><div class="t">Emergent Technologies: Pioneering Sustainable Futures</div><div class="a"><span class="me">Stella Doukianou</span></div><div class="v">Practical Sustainability Strategies, 3rd ed., Wiley</div></div></li>
+        <li><span class="yr">2025</span><div><div class="t">Speculative Co‑design With AI: An Artist‑Friendly Prototype for Non‑Human Avatar Creation</div><div class="a">Mengzhi He, <span class="me">Stella Doukianou</span>, Nick Bryan‑Kinns</div><div class="v">ACM Creativity and Cognition 2025</div></div></li>
+        <li><span class="yr">2024</span><div><div class="t">Framework for Social XR: Navigating Challenges, Ethics, and Opportunities for Authentic Community Engagement</div><div class="a"><span class="me">Stella Doukianou</span>, Vali Lalioti</div><div class="v">IEEE VR 2024 Abstracts and Workshops</div></div></li>
+        <li><span class="yr">2024</span><div><div class="t">Ethical Extended Reality: Bridging Technology and Cultural Heritage</div><div class="a"><span class="me">Stella Doukianou</span>, Vali Lalioti</div><div class="v">IEEE MetroXRAINE 2024, London</div></div></li>
+        <li><span class="yr">2024</span><div><div class="t">Alleviating Skin Hunger in Older Adults: The Convergence of Creative VR and Robotic Sensory Cushions</div><div class="a">Ziwei Zhao, <span class="me">Stella Doukianou</span>, Rebecca Fiebrink, Vali Lalioti</div><div class="v">IEEE MetroXRAINE 2024</div></div></li>
+        <li><span class="yr">2024</span><div><div class="t">CEDAR: An Augmented Reality Mobile Application Using a Participatory Design Framework for Citizen Science Data Sensing</div><div class="a">Mengci Liu, Peter Hall, <span class="me">Stella Doukianou</span>, Anna Troisi</div><div class="v">IEEE MetroXRAINE 2024</div></div></li>
+        <li><span class="yr">2022</span><div><div class="t">Art in HCI: A View from the UAL Creative Computing Institute</div><div class="a">P. Perry, R. Fiebrink, M. Grierson, M. J. Brueggemann, <span class="me">Stella Doukianou</span>, M. Plummer‑Fernandez, A. Troisi</div><div class="v">UAL Creative Computing Institute</div></div></li>
+        <li><span class="yr">2021</span><div><div class="t">Implementing an Augmented Reality and Animated Infographics Application for Presentations: Effect on Audience Engagement and Efficacy of Communication</div><div class="a"><span class="me">Stella Doukianou</span>, Damon Daylamani‑Zad, Kathy O'Loingsigh</div><div class="v">Multimedia Tools and Applications, Springer</div></div></li>
+        <li><span class="yr">2020</span><div><div class="t">Beyond Virtual Museums: Adopting Serious Games and Extended Reality (XR) for User‑Centred Cultural Experiences</div><div class="a"><span class="me">Stella Doukianou</span>, Damon Daylamani‑Zad, Ioannis Paraskevopoulos</div><div class="v">Visual Computing for Cultural Heritage, Springer</div></div></li>
+        <li><span class="yr">2019</span><div><div class="t">Reinforcing Rational Decision Making in a Risk Elicitation Task through Visual Reasoning</div><div class="a"><span class="me">Stella Doukianou</span>, Damon Daylamani‑Zad, Petros Lameras, Ian Dunwell</div><div class="v">CogSci 2019, Cognitive Science Society</div></div></li>
+        <li><span class="yr">2018</span><div><div class="t">Using VR, Eye Tracking and EEG to Transform the Design of Care Homes for People with Dementia</div><div class="a"><span class="me">Stella Doukianou</span></div><div class="v">UK‑China Newton Fund Researcher Links Workshop, Xi'an</div></div></li>
+        <li><span class="yr">2017</span><div><div class="t">The Impact of Visual Elements on Rational Decision Making During Risk Elicitation Tasks</div><div class="a"><span class="me">Stella Doukianou</span></div><div class="v">PhD thesis, Serious Games Institute, Coventry University</div></div></li>
+        <li><span class="yr">2017</span><div><div class="t">Developing Gamified Elements to Influence Positive Behavioural Change Towards Organisational Energy Efficiency</div><div class="a">S. O'Connor, <span class="me">Stella Doukianou</span>, A. Mahmoud, R. Dixon, D. O'Neill, I. Dunwell</div><div class="v">OrbEEt project</div></div></li>
+        <li><span class="yr">2016</span><div><div class="t">Gamifying Organisational Energy Behaviour Change: The OrbEEt Framework</div><div class="a"><span class="me">Stella Doukianou</span>, Ian Dunwell</div><div class="v">Behave 2016, European Conference on Behaviour and Energy Efficiency</div></div></li>
+        <li><span class="yr">2014</span><div><div class="t">Game‑Based Lifestyle Interventions for Adolescents: An Evidence‑Based Approach</div><div class="a">I. Dunwell, K. Torrens, S. Clarke, <span class="me">Stella Doukianou</span></div><div class="v">IEEE IMCL 2014</div></div></li>
+        <li><span class="yr">2014</span><div><div class="t">A Usability Evaluation of Game‑Based Approaches Assessing Risk and Delayed Gratification</div><div class="a"><span class="me">Stella Doukianou</span>, Panagiotis Petridis, Ian Dunwell, Joshua Cooper</div><div class="v">VS‑Games 2014</div></div></li>
+        <li><span class="yr">2014</span><div><div class="t">Assessing the Reach and Impact of Game‑Based Learning Approaches to Cultural Competency and Behavioural Change</div><div class="a">Ian Dunwell, Panagiotis Petridis, Petros Lameras, Maurice Hendrix, <span class="me">Stella Doukianou</span>, Mark Gaved</div><div class="v">arXiv CoRR</div></div></li>
+      </ul>
+      <p class="note">Full list on <a href="https://ualresearchonline.arts.ac.uk/view/creators/Doukianou=3AStella=3A=3A.html">UAL Research Online</a> and <a href="https://dblp.org/pid/142/2578.html">dblp</a></p>
+    </div>
+  </section>
+
+  <section id="supervision">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">Supervision</span><h2>PhD students</h2></div>
+      <p class="lead">Three doctoral completions and four current students working across extended reality, games, AI and digital identity</p>
+      <div class="cols">
+        <div class="card"><span class="k">Current</span><h3>Carl Harrison</h3><p>An XR coral reef game measuring conservation knowledge and empathy across mixed, virtual and augmented reality</p></div>
+        <div class="card"><span class="k">Current</span><h3>Hanjun Shi</h3><p>Classical and medieval receptions in digital games, with a focus on Genshin Impact, bringing a background in history and games design</p></div>
+        <div class="card"><span class="k">Current</span><h3>Yuqing Han</h3><p>Research summary to come</p></div>
+        <div class="card"><span class="k">Current</span><h3>Mengzhi He</h3><p>Virtual identity and non‑human avatars in XR, bridging fashion, digital art and generative AI through speculative co‑design</p></div>
+        <div class="card"><span class="k">Completed 2025</span><h3>Ziwei Zhao</h3><p>Multisensory XR to address the emotional and physical needs of skin hunger in lonely older adults</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">Teaching</span><h2>Teaching</h2></div>
+      <p class="lead">Learning by making, with real partners, real communities and an ethical lens on technology</p>
+      <div class="cols">
+        <div class="card"><span class="k">Approach</span><h3>Hackathons and design sprints</h3><p>Short intense making cycles that get students prototyping, testing and presenting from the first week</p></div>
+        <div class="card"><span class="k">Approach</span><h3>Participatory and ethical</h3><p>Community‑centred methods and ethical questions built into creative computing, from immersive media to AI</p></div>
+        <div class="card"><span class="k">Approach</span><h3>Live industry briefs</h3><p>Students work on real briefs with studios and organisations, from Jason Bruges Studio to Reos Partners and Moth</p></div>
+      </div>
+      <div class="sub">
+        <h3>Industry partners</h3>
+        <div class="chips">
+          <span class="tag">Jason Bruges Studio</span>
+          <span class="tag">Reos Partners</span>
+          <span class="tag">Moth</span>
+          <span class="tag">This Place Between Us</span>
+        </div>
+      </div>
+      <div class="sub">
+        <h3>Service</h3>
+        <div class="chips">
+          <span class="tag">ADAPTIVE 2027 Programme Committee</span>
+          <span class="tag">RCA Validation Panel Adviser</span>
+          <span class="tag">CCI Ethics Committee</span>
+          <span class="tag">CCI Creative XR and Robotics Hub</span>
+          <span class="tag">Games for Health Europe 2016 Organising Committee</span>
+          <span class="tag">AI literacy advocate</span>
+        </div>
+      </div>
+      <div class="sub">
+        <h3>Reviewer</h3>
+        <div class="chips">
+          <span class="tag">ACM CHI</span>
+          <span class="tag">IEEE IT Professional</span>
+          <span class="tag">Behaviour and Information Technology</span>
+          <span class="tag">UKRI</span>
+        </div>
+      </div>
+      <div class="sub">
+        <h3>Talks</h3>
+        <ul class="pos">
+          <li><span class="yr">2020</span><span class="title">Immersive Technologies for Healthcare</span><span class="where">Invited speaker, UCL Bartlett Real Estate Institute</span></li>
+          <li><span class="yr">2019</span><span class="title">Leveraging Emerging Technologies for Sustainability</span><span class="where">Keynote, Sustainability Leadership Forum, London</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="sec-head" style="display:block;margin:0"><span class="n">Contact</span></div>
+        <div>
+          <p class="big">Open to collaborations, live briefs and research partnerships</p>
+          <p class="small">Creative Computing Institute, University of the Arts London, Greencoat Building, London</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>Stella Doukianou</span><span>London</span></div>
+</footer>
+
+<script>
+(function(){
+  function rng(seed){let s=seed>>>0||1;return function(){s^=s<<13;s^=s>>>17;s^=s<<5;return ((s>>>0)%100000)/100000}}
+  function fit(c){const r=c.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);c.width=Math.max(1,r.width*d);c.height=Math.max(1,r.height*d);const x=c.getContext('2d');x.setTransform(d,0,0,d,0,0);return {x:x,w:r.width,h:r.height}}
+  function draw(c,seed,style){
+    const g=fit(c),x=g.x,w=g.w,h=g.h,R=rng(seed);
+    x.fillStyle='#0b0b0b';x.fillRect(0,0,w,h);
+    x.strokeStyle='rgba(255,255,255,0.75)';x.lineWidth=0.7;x.lineCap='round';
+    const a=R()*3+1,b=R()*3+1,ph=R()*6.28;
+    if(style==='rings'){
+      const cx=w*(0.35+R()*0.3),cy=h*(0.35+R()*0.3);
+      for(let i=1;i<60;i++){x.beginPath();for(let t=0;t<=6.30;t+=0.04){const r=i*Math.max(w,h)/70*(1+0.08*Math.sin(t*a+ph+i*0.1));const px=cx+Math.cos(t)*r,py=cy+Math.sin(t)*r;t===0?x.moveTo(px,py):x.lineTo(px,py)}x.stroke()}
+    }else if(style==='grid'){
+      const n=34;for(let k=0;k<2;k++){for(let i=0;i<=n;i++){x.beginPath();for(let j=0;j<=80;j++){const u=i/n,v=j/80;let px=k?u*w:v*w,py=k?v*h:u*h;const d=Math.sin(px*0.012*a+ph)*Math.cos(py*0.014*b)*14;k?px+=d:py+=d;j===0?x.moveTo(px,py):x.lineTo(px,py)}x.stroke()}}
+    }else if(style==='waves'){
+      for(let i=0;i<70;i++){const y0=i/70*h;x.beginPath();for(let px=0;px<=w;px+=4){const py=y0+Math.sin(px*0.01*a+i*0.25+ph)*18*Math.sin(i*0.08+b);px===0?x.moveTo(px,py):x.lineTo(px,py)}x.stroke()}
+    }else{
+      for(let i=0;i<220;i++){let px=R()*w,py=R()*h;x.beginPath();x.moveTo(px,py);for(let s=0;s<90;s++){const an=Math.sin(px*0.006*a+ph)+Math.cos(py*0.007*b)*2;px+=Math.cos(an)*3;py+=Math.sin(an)*3;x.lineTo(px,py)}x.stroke()}
+    }
+  }
+  function all(){
+    draw(document.getElementById('heroArt'),5,'flow');
+    document.querySelectorAll('.proj canvas').forEach(function(c){draw(c,+c.dataset.seed,c.dataset.style)});
+  }
+  all();let t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(all,150)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(all);
+})();
+</script>
+</body>
+</html>
