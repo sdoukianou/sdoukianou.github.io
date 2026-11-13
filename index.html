@@ -103,6 +103,8 @@ section{border-top:1px solid var(--ink);padding:clamp(48px,7vw,96px) 0}
 .proj figure img{width:100%;aspect-ratio:3/2;display:block;filter:grayscale(1)}
 .proj.wide figure img{aspect-ratio:21/9}
 .proj figure.photo img{object-fit:cover}
+.proj figure.haze img{filter:url(#heathaze) grayscale(1);opacity:.92;transform:scale(1.04)}
+.proj figure.haze{background:#fff}
 .proj figure.logo{background:#fff;border:1px solid var(--hair)}
 .proj figure.logo img{object-fit:contain;padding:8%}
 .proj.wide figure.logo img{padding:3%}
@@ -126,6 +128,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="heathaze" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.035" numOctaves="2" seed="3" result="n"><animate attributeName="baseFrequency" dur="9s" values="0.004 0.035;0.005 0.042;0.004 0.035" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"/><feGaussianBlur stdDeviation="0.9"/></filter></svg>
 <header>
   <div class="wrap">
     <a class="mark" href="#top">S Doukianou</a>
@@ -164,7 +167,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div>
           <p>Immersive technology, creative practice and social engagement</p>
           <p>Dr Stella Doukianou studies how extended reality can help people think, feel and act differently about the world around them. Over the past decade she has developed interactive systems and games that link creativity with advanced computing to deepen participation and inclusion, specialising in XR, HCI and game design. Her approach is grounded in co‑creation and the belief that technology should enable rather than exclude</p>
-          <p>A Greek researcher and educator with a background in civil engineering and digital media, she received her PhD in Serious Games from the Serious Games Institute, Coventry University, and her MSc in Design and Digital Media from the University of Edinburgh. She has taught for around fifteen years, with a focus on hackathons, design sprints and ethical approaches to creative computing education. Away from the studio, she is always chasing the sea</p>
+          <p>A Greek researcher and educator with a background in engineering and digital media, she received her PhD in Serious Games from the Serious Games Institute, Coventry University, and her MSc in Design and Digital Media from the University of Edinburgh. She has taught for around fifteen years, with a focus on hackathons, design sprints and ethical approaches to creative computing education. Away from the studio, she is always chasing the sea</p>
         </div>
       </div>
     </div>
@@ -175,7 +178,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="sec-head"><span class="n">Projects</span><h2>Projects</h2></div>
       <div class="grid">
         <article class="proj wide">
-          <figure><canvas data-seed="13" data-style="flow" aria-label="Abstract black and white line drawing"></canvas></figure>
+          <figure class="photo haze"><img src="heatlab.jpg" alt="Athens in summer heat" onerror="this.onerror=null;this.src='heatlab.svg';this.parentNode.classList.remove('haze')"></figure>
           <div class="meta"><span>Live brief</span><span>With Reos Partners</span></div>
           <h3>HeatLab</h3>
           <p>A live brief with Reos Partners for the Installation and Collaboration unit, ending in an exhibition of student work</p>
@@ -259,7 +262,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <span class="where"><strong>University of Greenwich</strong>. Directed BCS accreditation for Games and Digital Media and led validation of the MSc Computer Science with Games Development</span>
         </li>
         <li>
-          <span class="yr">2015 – 2017</span>
+          <span class="yr">2016 – 2017</span>
           <span class="title">Research Consultant</span>
           <span class="where"><strong>EXUS Ltd</strong>, London. Coordinated the Horizon 2020 project EMOTIVE</span>
         </li>
