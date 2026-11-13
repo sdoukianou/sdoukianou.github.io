@@ -84,6 +84,7 @@ section{border-top:1px solid var(--ink);padding:clamp(48px,7vw,96px) 0}
 .pos .yr{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-variant-numeric:tabular-nums}
 .pos .title{font-family:var(--display);font-size:clamp(24px,2.4vw,32px);line-height:1.15}
 .pos .where{font-size:16px}
+.pos .where strong{font-weight:500;color:var(--ink)}
 .pos li.now .title{font-weight:700}
 .sub{margin-top:56px;display:grid;grid-template-columns:200px 1fr;gap:32px}
 .sub h3{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;color:var(--mid)}
@@ -99,6 +100,12 @@ section{border-top:1px solid var(--ink);padding:clamp(48px,7vw,96px) 0}
 .proj p{margin-top:10px;max-width:46ch;font-size:16px}
 .proj.wide{grid-column:1 / -1}
 .proj.wide canvas{aspect-ratio:21/9}
+.proj figure img{width:100%;aspect-ratio:3/2;display:block;filter:grayscale(1)}
+.proj.wide figure img{aspect-ratio:21/9}
+.proj figure.photo img{object-fit:cover}
+.proj figure.logo{background:#fff;border:1px solid var(--hair)}
+.proj figure.logo img{object-fit:contain;padding:8%}
+.proj.wide figure.logo img{padding:3%}
 
 /* Contact */
 .contact{display:grid;grid-template-columns:200px 1fr;gap:32px}
@@ -113,7 +120,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .sec-head,.about,.sub,.contact{grid-template-columns:1fr;gap:12px}
   .pos li{grid-template-columns:1fr;gap:4px}
   .grid{grid-template-columns:1fr}
-  .proj.wide canvas{aspect-ratio:3/2}
+  .proj.wide canvas,.proj.wide figure img{aspect-ratio:3/2}
 }
 </style>
 </head>
@@ -124,8 +131,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <a class="mark" href="#top">S Doukianou</a>
     <nav aria-label="Sections">
       <a href="#about">About</a>
-      <a href="#positions">Positions</a>
       <a href="#projects">Projects</a>
+      <a href="#positions">Positions</a>
       <a href="#publications">Publications</a>
       <a href="#supervision">Supervision</a>
       <a href="#teaching">Teaching</a>
@@ -157,8 +164,52 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div>
           <p>Immersive technology, creative practice and social engagement</p>
           <p>Dr Stella Doukianou studies how extended reality can help people think, feel and act differently about the world around them. Over the past decade she has developed interactive systems and games that link creativity with advanced computing to deepen participation and inclusion, specialising in XR, HCI and game design. Her approach is grounded in co‑creation and the belief that technology should enable rather than exclude</p>
-          <p>A Greek researcher and educator with a background in civil engineering and digital media, she received her PhD in Computer Science from the Serious Games Institute, Coventry University, and her MSc in Design and Digital Media from the University of Edinburgh. She has taught for around fifteen years, with a focus on hackathons, design sprints and ethical approaches to creative computing education</p>
+          <p>A Greek researcher and educator with a background in civil engineering and digital media, she received her PhD in Serious Games from the Serious Games Institute, Coventry University, and her MSc in Design and Digital Media from the University of Edinburgh. She has taught for around fifteen years, with a focus on hackathons, design sprints and ethical approaches to creative computing education</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">Projects</span><h2>Projects</h2></div>
+      <div class="grid">
+        <article class="proj wide">
+          <figure class="photo"><img src="heatlab.jpg" alt="Arduino and breadboard wiring for HeatLab"></figure>
+          <div class="meta"><span>Live brief</span><span>With Reos Partners</span></div>
+          <h3>HeatLab</h3>
+          <p>A live brief with Reos Partners for the Installation and Collaboration unit, ending in an exhibition of student work</p>
+        </article>
+        <article class="proj">
+          <figure class="logo" style="background:rgb(239,239,239);border:0"><img src="game.jpg" alt="Paths of Resilience game title screen" style="padding:2%"></figure>
+          <div class="meta"><span>Participatory Design</span><span>With This Place Between Us</span></div>
+          <h3>Co‑designing a game with refugees</h3>
+          <p>A digital game co‑designed with Palestinian, Syrian, Syrian‑Kurdish, Ukrainian and Afghan participants, who shaped its stories, themes, tone and cultural content. The research team translated their themes into game mechanics and refined them together, to challenge stigma around refugee journeys</p>
+        </article>
+        <article class="proj">
+          <figure class="photo"><img src="exhibition.svg" alt="Line drawing of a house with an open door, olive branch, pomegranate, wheat and cross-stitch: Rebuilding, not arriving"></figure>
+          <div class="meta"><span>Exhibition, May 2025</span><span>With This Place Between Us</span></div>
+          <h3>Paths of Resilience</h3>
+          <p>A knowledge exchange project and public exhibition curated with This Place Between Us, growing out of three co‑design workshops with refugee participants and a concept for a serious game aimed at destigmatisation</p>
+        </article>
+        <article class="proj">
+          <figure class="logo"><img src="emotive.jpg" alt="EMOTIVE project logo"></figure>
+          <div class="meta"><span>H2020, 2016 – 2019</span><span>Coordinator</span></div>
+          <h3>EMOTIVE</h3>
+          <p>Emotionally resonant, interactive XR storytelling for cultural heritage and museums, a €2.6m Horizon 2020 project coordinated on behalf of EXUS</p>
+        </article>
+        <article class="proj">
+          <figure class="logo"><img src="orbeet.png" alt="OrbEEt project logo"></figure>
+          <div class="meta"><span>H2020, 2015 – 2018</span><span>Work Package Leader</span></div>
+          <h3>OrbEEt</h3>
+          <p>A serious game encouraging energy‑efficient behaviour in organisations through personalised digital feedback, led on behalf of the Serious Games Institute</p>
+        </article>
+        <article class="proj wide">
+          <figure class="logo"><img src="cosmos.jpg" alt="COSMOS project logo"></figure>
+          <div class="meta"><span>FP7, 2013 – 2016</span><span>Work Package Leader</span></div>
+          <h3>COSMOS</h3>
+          <p>IoT for smart cities, leading the London "Smart Heat and Electricity" scenario and its behavioural change framework on behalf of Hildebrand</p>
+        </article>
       </div>
     </div>
   </section>
@@ -170,67 +221,72 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <li class="now">
           <span class="yr">Current</span>
           <span class="title">Course Leader, BSc Creative Computing</span>
-          <span class="where">Creative Computing Institute, University of the Arts London</span>
+          <span class="where">Creative Computing Institute, <strong>University of the Arts London</strong></span>
         </li>
         <li>
           <span class="yr">Current</span>
           <span class="title">PhD Supervisor</span>
-          <span class="where">Creative Computing Institute, University of the Arts London, with three doctoral completions</span>
+          <span class="where">Creative Computing Institute, <strong>University of the Arts London</strong>, with three doctoral completions</span>
+        </li>
+        <li>
+          <span class="yr">2026</span>
+          <span class="title">External Adviser, Programme Validation</span>
+          <span class="where">MA/MFA Artificial Intelligence and Digital Art (AiDA), <strong>Royal College of Art</strong>. Reviewed the curriculum, assessment strategy and student experience of a new postgraduate programme, and advised the panel on its approval for delivery from 2027</span>
         </li>
         <li>
           <span class="yr">2019 – 2024</span>
           <span class="title">Senior Lecturer in Creative Computing</span>
-          <span class="where">Creative Computing Institute, University of the Arts London. Led Experimental HCI, Digital Production, Visualisation and Sensing, and History of Computing; Placement Coordinator</span>
+          <span class="where">Creative Computing Institute, <strong>University of the Arts London</strong>. Led Experimental HCI, Digital Production, Visualisation and Sensing, and History of Computing; Placement Coordinator</span>
         </li>
         <li>
           <span class="yr">2023 – 2026</span>
           <span class="title">External Examiner</span>
-          <span class="where">Brunel University London and University of Kent, BSc and BA in Digital Design, Visual Effects and Multimedia Technology</span>
+          <span class="where"><strong>Brunel University London</strong> and <strong>University of Kent</strong>, BSc and BA in Digital Design, Visual Effects and Multimedia Technology</span>
         </li>
         <li>
           <span class="yr">2022 – 2023</span>
           <span class="title">External Programme Reviewer</span>
-          <span class="where">MSc Digital Design, Brunel University London</span>
+          <span class="where">MSc Digital Design, <strong>Brunel University London</strong></span>
         </li>
         <li>
           <span class="yr">2019 – 2024</span>
           <span class="title">External Reviewer, Internal Quality Review</span>
-          <span class="where">Culture, Communication and Media, IOE, University College London</span>
+          <span class="where">Culture, Communication and Media, IOE, <strong>University College London</strong></span>
         </li>
         <li>
           <span class="yr">2017 – 2021</span>
           <span class="title">Lecturer in Disruptive Technologies</span>
-          <span class="where">University of Greenwich. Directed BCS accreditation for Games and Digital Media and led validation of the MSc Computer Science with Games Development</span>
+          <span class="where"><strong>University of Greenwich</strong>. Directed BCS accreditation for Games and Digital Media and led validation of the MSc Computer Science with Games Development</span>
         </li>
         <li>
           <span class="yr">2015 – 2017</span>
           <span class="title">Research Consultant</span>
-          <span class="where">EXUS Ltd, London. Coordinated the Horizon 2020 project EMOTIVE</span>
+          <span class="where"><strong>EXUS Ltd</strong>, London. Coordinated the Horizon 2020 project EMOTIVE</span>
         </li>
         <li>
           <span class="yr">2015 – 2016</span>
           <span class="title">Research Associate</span>
-          <span class="where">Serious Games Institute, Coventry University. Led work on the H2020 project OrbEEt</span>
+          <span class="where">Serious Games Institute, <strong>Coventry University</strong>. Led work on the H2020 project OrbEEt</span>
         </li>
         <li>
           <span class="yr">2013 – 2015</span>
           <span class="title">Researcher</span>
-          <span class="where">Hildebrand Technology Ltd, London. FP7 smart‑city project COSMOS</span>
+          <span class="where"><strong>Hildebrand Technology Ltd</strong>, London. FP7 smart‑city project COSMOS</span>
         </li>
         <li>
           <span class="yr">2012 – 2013</span>
           <span class="title">Research Assistant</span>
-          <span class="where">German Centre for Neurodegenerative Diseases (DZNE), with Prof Thomas Wolbers. 3D immersive environments for cognitive research</span>
+          <span class="where"><strong>German Centre for Neurodegenerative Diseases (DZNE)</strong>, with Prof Thomas Wolbers. 3D immersive environments for cognitive research</span>
         </li>
       </ul>
 
       <div class="sub">
         <h3>Education</h3>
         <ul class="pos" style="border-top:0">
-          <li><span class="yr">2013 – 2018</span><span class="title">PhD in Computer Science</span><span class="where">Serious Games Institute, Coventry University. Full‑time doctoral studentship</span></li>
-          <li><span class="yr">2011 – 2012</span><span class="title">MSc Design and Digital Media</span><span class="where">University of Edinburgh</span></li>
-          <li><span class="yr">2004 – 2010</span><span class="title">BSc (Hons) Civil Engineering</span><span class="where">Technological Educational Institute of Central Macedonia, Greece</span></li>
-          <li><span class="yr">2017 – 2018</span><span class="title">PGCert in Higher Education</span><span class="where">University of Greenwich</span></li>
+          <li><span class="yr">2013 – 2018</span><span class="title">PhD in Serious Games</span><span class="where">Serious Games Institute, <strong>Coventry University</strong>. Full‑time doctoral studentship</span></li>
+          <li><span class="yr">2011 – 2012</span><span class="title">MSc Design and Digital Media</span><span class="where"><strong>University of Edinburgh</strong></span></li>
+          <li><span class="yr">2004 – 2010</span><span class="title">BSc (Hons) Civil Engineering</span><span class="where"><strong>Technological Educational Institute of Central Macedonia</strong>, Greece</span></li>
+          <li><span class="yr">2017 – 2018</span><span class="title">PGCert in Higher Education</span><span class="where"><strong>University of Greenwich</strong></span></li>
         </ul>
       </div>
       <div class="sub">
@@ -241,50 +297,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <span class="tag">SEDA, Supervising Research Degrees, 2024</span>
           <span class="tag">Computer Arts Society</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="wrap">
-      <div class="sec-head"><span class="n">Projects</span><h2>Projects</h2></div>
-      <div class="grid">
-        <article class="proj wide">
-          <figure><canvas data-seed="13" data-style="flow" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
-          <div class="meta"><span>Live brief</span><span>With Reos Partners</span></div>
-          <h3>HeatLab</h3>
-          <p>A live brief with Reos Partners for the Installation and Collaboration unit, ending in an exhibition of student work</p>
-        </article>
-        <article class="proj">
-          <figure><canvas data-seed="7" data-style="flow" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
-          <div class="meta"><span>Participatory Design</span><span>With This Place Between Us</span></div>
-          <h3>Co‑designing a game with refugees</h3>
-          <p>A digital game made through a co‑design process with refugees, to raise public awareness and challenge stigma around refugee journeys, funded through an Innovation Voucher</p>
-        </article>
-        <article class="proj">
-          <figure><canvas data-seed="64" data-style="waves" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
-          <div class="meta"><span>Exhibition, May 2025</span><span>With This Place Between Us</span></div>
-          <h3>Paths of Resilience</h3>
-          <p>A knowledge exchange project and public exhibition curated with This Place Between Us, growing out of three co‑design workshops with refugee participants and a concept for a serious game aimed at destigmatisation</p>
-        </article>
-        <article class="proj">
-          <figure><canvas data-seed="21" data-style="rings" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
-          <div class="meta"><span>H2020, 2016 – 2019</span><span>Coordinator</span></div>
-          <h3>EMOTIVE</h3>
-          <p>Emotionally resonant, interactive XR storytelling for cultural heritage and museums, a €2.6m Horizon 2020 project coordinated on behalf of EXUS</p>
-        </article>
-        <article class="proj">
-          <figure><canvas data-seed="42" data-style="grid" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
-          <div class="meta"><span>H2020, 2015 – 2018</span><span>Work Package Leader</span></div>
-          <h3>OrbEEt</h3>
-          <p>A serious game encouraging energy‑efficient behaviour in organisations through personalised digital feedback, led on behalf of the Serious Games Institute</p>
-        </article>
-        <article class="proj wide">
-          <figure><canvas data-seed="88" data-style="waves" aria-label="Photo placeholder"></canvas><figcaption>Photo to come</figcaption></figure>
-          <div class="meta"><span>FP7, 2013 – 2016</span><span>Work Package Leader</span></div>
-          <h3>COSMOS</h3>
-          <p>IoT for smart cities, leading the London "Smart Heat and Electricity" scenario and its behavioural change framework on behalf of Hildebrand</p>
-        </article>
       </div>
     </div>
   </section>
@@ -323,8 +335,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="cols">
         <div class="card"><span class="k">Current</span><h3>Carl Harrison</h3><p>An XR coral reef game measuring conservation knowledge and empathy across mixed, virtual and augmented reality</p></div>
         <div class="card"><span class="k">Current</span><h3>Hanjun Shi</h3><p>Classical and medieval receptions in digital games, with a focus on Genshin Impact, bringing a background in history and games design</p></div>
-        <div class="card"><span class="k">Current</span><h3>Yuqing Han</h3><p>Research summary to come</p></div>
+        <div class="card"><span class="k">Current</span><h3>Yuqing Han</h3><p>Embodied Soft‑Restorative Presence in a Social Robot</p></div>
         <div class="card"><span class="k">Current</span><h3>Mengzhi He</h3><p>Virtual identity and non‑human avatars in XR, bridging fashion, digital art and generative AI through speculative co‑design</p></div>
+        <div class="card"><span class="k">Completed</span><h3>Mengci Liu</h3><p>CEDAR, an augmented reality app for citizen science environmental data sensing, built through a participatory design framework</p></div>
         <div class="card"><span class="k">Completed 2025</span><h3>Ziwei Zhao</h3><p>Multisensory XR to address the emotional and physical needs of skin hunger in lonely older adults</p></div>
       </div>
     </div>
